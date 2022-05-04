@@ -99,17 +99,7 @@ class MenuBarLyricsController {
         lyricsItem = nil
         
         setTextStatusItem(string: screenLyrics)
-        if statusItem.isVisibe {
-            return
-        }
-        
-        // truncation
-        var components = screenLyrics.components(options: [.byWords])
-        while !components.isEmpty, !statusItem.isVisibe {
-            components.removeLast()
-            let proposed = components.joined() + "..."
-            setTextStatusItem(string: proposed)
-        }
+        return
     }
     
     private func setTextStatusItem(string: String) {
